@@ -130,7 +130,8 @@ const PropertyTable = ({ propertiesData, communitiesListName }) => {
 
 
   const SubmitEdit = async () => {
-    const finalObj = { ...updateObj, featured_image: propertiesImgUrls }
+     const imgs = propertiesImgUrls.length == 0 ? updateObj.featured_image : propertiesImgUrls;
+    const finalObj = { ...updateObj, featured_image: imgs }
     const updatingData = doc(db, "properties", updateObj.id);
     await updateDoc(updatingData, finalObj);
     document.getElementById("community-update-modal-btn").click()
