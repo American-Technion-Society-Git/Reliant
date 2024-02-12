@@ -154,7 +154,7 @@ const PropertyTable = ({ propertiesData, communitiesListName }) => {
         data={updateObj.address}
         onChange={(event, editor) => {
             const data = editor.getData();
-            setUpdateObj({ ...updateObj, address: event.target.value })
+            setUpdateObj({ ...updateObj, address: data })
         }}
         config={{
             toolbar: ['heading', 'bold', 'italic', 'bulletedList', 'numberedList'],
