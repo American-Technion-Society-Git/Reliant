@@ -42,7 +42,7 @@ const PropertyPage = () => {
     const lastHour = lastTime[0] > 12 ? lastTime[0] - 12 : lastTime[0];
     const lastMin = lastTime[1]
     let end_time = `${lastHour}:${lastMin}`
-
+    const amenities = data.amenities == '<p>-</p>' ? false : true;
    
 
 
@@ -55,8 +55,16 @@ const PropertyPage = () => {
        <h6><b id='div-address'>{parse(`${data.address}`)}</b></h6>
       <p>{data.description}</p>
 
-      <h3>Building Amenities</h3>
-      <h6><b id='div-address'>{parse(`${data.amenities}`)}</b></h6>
+
+      
+      {amenities? 
+      <div>
+            <h3>Building Amenities</h3>
+            <h6><b id='div-address'>{parse(`${data.amenities}`)}</b></h6>
+            </div>
+          :
+            <div></div>
+          }
 
 
      <h3>Management Office</h3>
