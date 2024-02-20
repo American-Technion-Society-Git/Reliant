@@ -42,9 +42,9 @@ const PropertyPage = () => {
     const lastHour = lastTime[0] > 12 ? lastTime[0] - 12 : lastTime[0];
     const lastMin = lastTime[1]
     let end_time = `${lastHour}:${lastMin}`
-    const check = data.amenities == '<p>-</p>' ? false : true;
+    const check = data.amenities == '<p>-</p>' ||  data.amenities == '' ? false : true;
    
-
+console.log(check)
   return (
     <div className='property_section'>
       <div className='container-fluid'>
