@@ -42,9 +42,8 @@ const PropertyPage = () => {
     const lastHour = lastTime[0] > 12 ? lastTime[0] - 12 : lastTime[0];
     const lastMin = lastTime[1]
     let end_time = `${lastHour}:${lastMin}`
-    const amenities = data.amenities == '<p>-</p>' ? false : true;
+    const check = data.amenities == '<p>-</p>' ? false : true;
    
-
 
   return (
     <div className='property_section'>
@@ -57,7 +56,7 @@ const PropertyPage = () => {
 
 
       
-      {amenities? 
+      {check? 
       <div>
             <h3>Building Amenities</h3>
             <h6><b id='div-address'>{parse(`${data.amenities}`)}</b></h6>
