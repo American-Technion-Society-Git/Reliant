@@ -48,9 +48,7 @@ const Navbar = ({ data }) => {
 
                                     </ul>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href='https://www.indeed.com/q-Reliant-Realty-jobs.html' target='_blank'>Careers</a>
-                                </li>
+
                                 <li className="nav-item">
                                     <Link className={location == '/contact' ? "nav-link active" : "nav-link"} to={'/contact'}>Contact</Link>
                                 </li>
