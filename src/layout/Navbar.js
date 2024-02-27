@@ -48,7 +48,7 @@ const Navbar = ({ data }) => {
 
                                     </ul>
                                 </li>
-                                
+
                                 <li className="nav-item">
                                     <Link className={location == '/contact' ? "nav-link active" : "nav-link"} to={'/contact'}>Contact</Link>
                                 </li>

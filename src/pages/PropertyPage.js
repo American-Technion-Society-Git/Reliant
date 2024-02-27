@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import parse from 'html-react-parser';
 
 const PropertyPage = () => {
+
     
     const settings = {
         dots: true,
@@ -42,29 +43,29 @@ const PropertyPage = () => {
     const lastHour = lastTime[0] > 12 ? lastTime[0] - 12 : lastTime[0];
     const lastMin = lastTime[1]
     let end_time = `${lastHour}:${lastMin}`
-    const check = data.amenities == '<p>-</p>' ||  data.amenities == '' ? false : true;
-   
-console.log(check)
+
+   const text = parse(data.amenities)
+
+
   return (
     <div className='property_section'>
       <div className='container-fluid'>
   
         <div class="content">
         <h3 class="textreveal">{data.name}</h3>
-       <h6><b id='div-address'>{parse(`${data.address}`)}</b></h6>
+       <h6><b id='div-address'>{parse(data.address)}</b></h6>
       <p>{data.description}</p>
 
-
-      
-      {check? 
-      <div>
-            <h3>Building Amenities</h3>
-            <h6><b id='div-address'>{parse(`${data.amenities}`)}</b></h6>
-            </div>
-          :
-            <div></div>
+          {
+            Object.keys(text).length > 0 &&
+                <div>
+                  <h3>Building Amenities</h3>
+              <h6><b id='div-address'>{parse(data.amenities)}</b></h6>
+                </div>
           }
 
+    
+          
 
      <h3>Management Office</h3>
      <h6><b>{data.mangeAddress}</b></h6>
