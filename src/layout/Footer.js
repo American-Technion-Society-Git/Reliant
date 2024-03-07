@@ -32,7 +32,7 @@ const Footer = () => {
                                     <Link to={'/about'} onClick={() => scrollToTop()}>About</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} onClick={() => scrollToTop()}>Careers</Link>
+                                    <a href='https://www.indeed.com/q-Reliant-Realty-jobs.html' target='_blank'>Careers</a>
                                 </li>
                                 <li>
                                     <Link to={'/'} onClick={() => scrollToTop()}>Communities</Link>
