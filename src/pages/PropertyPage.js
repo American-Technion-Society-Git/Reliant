@@ -43,7 +43,8 @@ const PropertyPage = () => {
     const lastHour = lastTime[0] > 12 ? lastTime[0] - 12 : lastTime[0];
     const lastMin = lastTime[1]
     let end_time = `${lastHour}:${lastMin}`
-
+    const check = data.amenities == '<p>-</p>' ||  data.amenities == '' ? false : true;
+    const application_form = data.application_form == ''  ? false : true;
    const text = parse(data.amenities)
 
 
@@ -74,10 +75,12 @@ const PropertyPage = () => {
      <h6><b>P: {data.phone}</b></h6>
      <h6><b>{data.email}</b></h6>
         </div>
-
+        {application_form? 
         <div>
             <a href={data.application_form}><button className='btn btn-primary'>Submit Application</button></a>
         </div>
+        : <div><button className='btn btn-light' type='button'>Not Accepting Application</button></div>
+        }
       </div>
 
      <Slider {...settings}>
