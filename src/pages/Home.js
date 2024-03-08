@@ -21,6 +21,7 @@ import Slider from 'react-slick'
 import Contact from './Contact'
 
 
+
 const Home = ({ data }) => {
 
     const navigate = useNavigate();
@@ -47,6 +48,13 @@ const Home = ({ data }) => {
                             The heart of a strong community is a happy home. We build beautiful neighborhoods through
                             affordable housing and best in class property management and compliance.
                         </p>
+                        <div className="search">
+                            <form>
+                                <div class="searchfield" id="searchareapar"><input type="text" placeholder="City, Area, Zip or Community" id="searcharea" class="ui-autocomplete-input" autocomplete="off"></input><input type="hidden" name="region" id="regionfield"></input><input type="hidden" name="city" id="cityfield"></input><input type="hidden" name="zipcode" id="zipcodefield"></input></div>
+                                <div class="searchfield" id="searchbedpar"><div class="selectric-wrapper"><div class="selectric-hide-select"><select id="searchbed" name="beds" tabindex="-1"><option selected="true" disabled="disabled">Bedroom</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div><div class="selectric"><span class="label">Bedroom</span><b class="button">▾</b></div><div class="selectric-items" tabindex="-1"><div class="selectric-scroll"><ul><li data-index="0" class="disabled selected">Bedroom</li><li data-index="1" class="">1</li><li data-index="2" class="">2</li><li data-index="3" class="last">3</li></ul></div></div><input class="selectric-input" tabindex="0"></input></div></div>
+                                <div className="searchfield"><input type="submit" id="searchsubmit" value="Search"></input></div>  
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div className="video_wrapper">
