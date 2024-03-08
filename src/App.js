@@ -12,6 +12,7 @@ import Communities from './pages/Communities';
 import SignIn from './pages/SignIn';
 import Admin from './pages/Admin';
 import PropertyPage from './pages/PropertyPage';
+import './css/custom.css'
 
 function App() {
 
