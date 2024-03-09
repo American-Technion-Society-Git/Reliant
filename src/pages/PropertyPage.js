@@ -1,7 +1,8 @@
 import React from 'react'
-import { useLocation } from "react-router-dom"
+import { useLocation ,Link} from "react-router-dom"
 import Slider from "react-slick";
 import parse from 'html-react-parser';
+
 
 const PropertyPage = () => {
 
@@ -45,46 +46,47 @@ const PropertyPage = () => {
     let end_time = `${lastHour}:${lastMin}`
     const check = data.amenities == '<p>-</p>' ||  data.amenities == '' ? false : true;
     const application_form = data.application_form == ''  ? false : true;
-   const text = parse(data.amenities)
+    const text = data.amenities.replace("<p>", "<li>")
 
-
+    let content = data.amenities;
+content = content.replace(/<p>/g, "<li>");  
+content = content.replace(/<\/p>/g,"</li>"); 
   return (
     <div className='property_section'>
-      <div className="inner_banner" style={{backgroundImage: "url(https://www.reliantrs.com/dev/wp-content/uploads/2019/05/west_village_building.jpg)"}}></div>
+      <div className="inner_banner" style={{backgroundImage: `url(${(data.thumbnail)})`}}></div>
       <div id="breadcrumb">
         <div class="container-fluid">
           <div class="col-sm-12">
-            <a href="https://www.reliantrs.com">Home</a><span>&lt;</span>
-            <a href="https://www.reliantrs.com/community/metro-new-york">Communities</a><span>&lt;</span>
-            <a href="https://www.reliantrs.com/community/upstate-new-york">Upstate New York</a>
+            <Link to={'/'}>Home</Link><span>&lt;</span>
+            <Link to={`/communities/${data.community.toLowerCase().replace(/\s+/g, '-')}`}>{data.community}</Link>
+<span>&lt;</span>
+            <a href="javascript">Upstate New York</a>
           </div>
         </div>
       </div>
       <div className='container-fluid'>
         <div className='row'>
             <div className='col-sm-8'>
-              <h3 class="textreveal">{data.name}</h3>
-              <h6><b id='div-address'>{parse(data.address)}</b></h6>
-              <p>{data.description}</p>
-                {
-                  Object.keys(text).length > 0 &&
-                      <div>
-                        <h3>Building Amenities</h3>
-                    <h6><b id='div-address'>{parse(data.amenities)}</b></h6>
-                      </div>
-                }
-              <h3>Management Office</h3>
-              <h6><b>{data.mangeAddress}</b></h6>
-              <h6><b>Office Hours: {start_time} - {end_time}</b></h6>
-              <h6><b>{data.dayStart}-{data.dayEnd}</b></h6>
-              <h6><b>P: {data.phone}</b></h6>
-              <h6><b>{data.email}</b></h6>
+                <div class="pname">{data.name}</div>
+                  <div class="paddress">{parse(data.address)}`</div>
+                  <div class="pdesc"><p><strong>{parse(data.description)}`</strong></p>
+                  <p><strong>Building Amenities:</strong></p>
+                  <ul>
+                    {parse(content)}
+                  </ul>
+                </div>
             </div>
             {application_form? 
             <div className='col-sm-4'>
                 <a href={data.application_form}><button className='btn btn-primary'>Submit Application</button></a>
+                <div class="pcontact">
+                  <div class="pctitle">Management Office</div>
+                    <p><strong>150 West Village Place, Ithaca, NY 14850</strong></p>
+                    <p><strong>Office Hours:</strong> 9:00am–5:00pm M–F</p>
+                    <p><strong>P:</strong> (607) 273-5215<br/><strong>F:</strong> (607) 273-5220<br/><a href="mailto:WestVillage@reliantrs.com">WestVillage@reliantrs.com</a></p>
+                  </div>
             </div>
-            : <div><button className='btn btn-light' type='button'>Not Accepting Application</button></div>
+            : <div className='col-sm-4'><button className='btn btn-light' type='button' style={{backgroundColor:'#d3d4d5'}}>Not Accepting Application</button></div>
             }
         </div>
       </div>
