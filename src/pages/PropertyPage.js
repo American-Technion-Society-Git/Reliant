@@ -51,6 +51,7 @@ const PropertyPage = () => {
     let content = data.amenities;
 content = content.replace(/<p>/g, "<li>");  
 content = content.replace(/<\/p>/g,"</li>"); 
+console.log(data)
   return (
     <div className='property_section'>
       <div className="inner_banner" style={{backgroundImage: `url(${(data.thumbnail)})`}}></div>
@@ -69,25 +70,32 @@ content = content.replace(/<\/p>/g,"</li>");
             <div className='col-sm-8'>
                 <div class="pname">{data.name}</div>
                   <div class="paddress">{parse(data.address)}`</div>
-                  <div class="pdesc"><p><strong>{parse(data.description)}`</strong></p>
+                  <div class="pdesc"><p><strong>{parse(data.description)}</strong></p>
+                  {check ?
+                  <div>
                   <p><strong>Building Amenities:</strong></p>
                   <ul>
                     {parse(content)}
                   </ul>
+                  </div>
+                  : <div></div>
+}
                 </div>
             </div>
-            {application_form? 
             <div className='col-sm-4'>
-                <a href={data.application_form}><button className='btn btn-primary'>Submit Application</button></a>
+              <div>
+                {application_form? 
+                 <a href={data.application_form}><button className='btn btn-primary'>Submit Application</button></a>
+                : <button className='btn btn-light' type='button' style={{backgroundColor:'#d3d4d5'}}>Not Accepting Application</button>
+                }
+                </div>
                 <div class="pcontact">
                   <div class="pctitle">Management Office</div>
-                    <p><strong>150 West Village Place, Ithaca, NY 14850</strong></p>
-                    <p><strong>Office Hours:</strong> 9:00am–5:00pm M–F</p>
-                    <p><strong>P:</strong> (607) 273-5215<br/><strong>F:</strong> (607) 273-5220<br/><a href="mailto:WestVillage@reliantrs.com">WestVillage@reliantrs.com</a></p>
+                    <p><strong>{parse(data.mangeAddress)}</strong></p>
+                    <p><strong>Office Hours:</strong> {data.timeStart}-{data.timeEnd} {data.dayStart}-{data.dayEnd}</p>
+                    <p><strong>P:</strong>{parse(data.phone)}<br/><a href="mailto:{data.email}">{data.email}</a></p>
                   </div>
             </div>
-            : <div className='col-sm-4'><button className='btn btn-light' type='button' style={{backgroundColor:'#d3d4d5'}}>Not Accepting Application</button></div>
-            }
         </div>
       </div>
 
