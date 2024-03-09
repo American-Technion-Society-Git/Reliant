@@ -50,7 +50,7 @@ const PropertyPage = () => {
 
   return (
     <div className='property_section'>
-      <div className="inner_banner" style={{backgroundImage: "url(https://www.reliantrs.com/dev/wp-content/uploads/2019/05/west_village_building.jpg)"}}></div>
+      <div className="inner_banner" style={{backgroundImage: "url(https://www.reliantrs.com/dev/wp-content/uploads/2019/05/20201030_155053.jpg"}}></div>
       <div id="breadcrumb">
         <div class="container-fluid">
           <div class="col-sm-12">
@@ -63,28 +63,34 @@ const PropertyPage = () => {
       <div className='container-fluid'>
         <div className='row'>
             <div className='col-sm-8'>
-              <h3 class="textreveal">{data.name}</h3>
-              <h6><b id='div-address'>{parse(data.address)}</b></h6>
-              <p>{data.description}</p>
-                {
-                  Object.keys(text).length > 0 &&
-                      <div>
-                        <h3>Building Amenities</h3>
-                    <h6><b id='div-address'>{parse(data.amenities)}</b></h6>
-                      </div>
-                }
-              <h3>Management Office</h3>
-              <h6><b>{data.mangeAddress}</b></h6>
-              <h6><b>Office Hours: {start_time} - {end_time}</b></h6>
-              <h6><b>{data.dayStart}-{data.dayEnd}</b></h6>
-              <h6><b>P: {data.phone}</b></h6>
-              <h6><b>{data.email}</b></h6>
+                <div class="pname">West Village</div>
+                  <div class="paddress">150 West Village Place, Ithaca, NY 14850</div>
+                  <div class="pdesc"><p><strong>West Village Apartments is a mixed-use property which consists of 18 buildings, containing 235 Low-Income Housing Tax Credit units in a variety of building types. All vouchers and rental assistance programs are accepted.</strong></p>
+                  <p><strong>Building Amenities:</strong></p>
+                  <ul>
+                    <li>Utilities included: heat, water, electric, gas, garbage pickup and sewer</li>
+                    <li>Community room</li>
+                    <li>Laundry rooms (2)</li>
+                    <li>Playgrounds (2)</li>
+                    <li>Outdoor gazebo</li>
+                    <li>Professional on-site management &amp; responsive maintenance team</li>
+                    <li>24-hour surveillance system &amp; access control system</li>
+                    <li>Public transportation available at property entrance</li>
+                    <li>On-site 4-Hour after school program with computer room</li>
+                  </ul>
+                </div>
             </div>
             {application_form? 
             <div className='col-sm-4'>
                 <a href={data.application_form}><button className='btn btn-primary'>Submit Application</button></a>
+                <div class="pcontact">
+                  <div class="pctitle">Management Office</div>
+                    <p><strong>150 West Village Place, Ithaca, NY 14850</strong></p>
+                    <p><strong>Office Hours:</strong> 9:00am–5:00pm M–F</p>
+                    <p><strong>P:</strong> (607) 273-5215<br/><strong>F:</strong> (607) 273-5220<br/><a href="mailto:WestVillage@reliantrs.com">WestVillage@reliantrs.com</a></p>
+                  </div>
             </div>
-            : <div><button className='btn btn-light' type='button'>Not Accepting Application</button></div>
+            : <div className='col-sm-4'><button className='btn btn-light' type='button'>Not Accepting Application</button></div>
             }
         </div>
       </div>

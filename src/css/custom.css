@@ -332,8 +332,69 @@
     }
     
     #breadcrumb .container-fluid {
-        padding: .3rem 3rem;
+        padding: .3rem 0;
     }
     .property_section .btn.btn-primary {
         width: 100%;
+    }
+
+
+
+    .property_section .container-fluid {
+      padding: 1.5rem 0rem 3rem;
+    }
+    .pname {
+      font-size: 48px;
+      color: #004f73;
+      margin-bottom: 25px;
+      margin-top: 15px;
+    }
+    .paddress {
+      font-size: 16px;
+      color: #004f73;
+      margin-bottom: 20px;
+      line-height: 26px;
+      font-weight: 600;
+    }
+    
+    .pdesc p{font-size: 16px;line-height: 26px;color:#4f5660;margin-bottom: 26px;font-weight: 500; margin-bottom:15px}
+    .pdesc p strong {
+      font-weight: 700;
+    }
+    
+    .pcontact p{font-size: 16px;line-height: 26px;color:#4f5660;margin-bottom: 26px;font-weight: 500; margin-bottom:15px}
+    .pcontact p strong {
+      font-weight: 700;
+    }
+    #propertyintro p{margin-bottom: 12px}
+    .pdesc li {
+      padding-left: 42px;
+      position: relative;
+      font-size: 16px;
+      line-height: 26px;
+      color: #4f5660;
+      font-weight: 500;
+    }
+    .pdesc li::before {
+      content: "·";
+      color: rgb(79, 86, 96);
+      font-size: 22px;
+      font-weight: 700;
+      position: absolute;
+      left: 20px;
+    }
+    .pctitle {
+      color: #004f73;
+      font-size: 24px;
+      margin-bottom: 16px;
+      margin-top: 30px;
+    }
+    .pcontact a {
+      text-decoration: none;
+      color: #4f5660;
+    }
+    
+    .pdesc ul {
+      list-style: none;
+      padding: 0;
     }
