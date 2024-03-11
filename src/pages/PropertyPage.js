@@ -45,13 +45,12 @@ const PropertyPage = () => {
     const lastMin = lastTime[1]
     let end_time = `${lastHour}:${lastMin}`
     const check = data.amenities == '<p>-</p>' ||  data.amenities == '' ? false : true;
-    const application_form = data.application_form == ''  ? false : true;
+    const application_form = data.application_form == '' || data.application_form == '-' ? false : true;
     const text = data.amenities.replace("<p>", "<li>")
 
     let content = data.amenities;
 content = content.replace(/<p>/g, "<li>");  
 content = content.replace(/<\/p>/g,"</li>"); 
-console.log(data)
   return (
     <div className='property_section'>
       <div className="inner_banner" style={{backgroundImage: `url(${(data.thumbnail)})`}}></div>
@@ -86,7 +85,7 @@ console.log(data)
               <div>
                 {application_form? 
                  <a href={data.application_form}><button className='btn btn-primary'>Submit Application</button></a>
-                : <button className='btn btn-light' type='button' style={{backgroundColor:'#d3d4d5'}}>Not Accepting Application</button>
+                : <button className='btn btn-light' type='button'>Not Accepting Application</button>
                 }
                 </div>
                 <div class="pcontact">
