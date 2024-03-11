@@ -336,8 +336,10 @@
     }
     .property_section .btn.btn-primary {
         width: 100%;
+        margin-top: 15px;
+        font-size: 1rem;
+        font-weight: 600;
     }
-
 
 
     .property_section .container-fluid {
@@ -397,4 +399,53 @@
     .pdesc ul {
       list-style: none;
       padding: 0;
+    }
+    
+    @media (max-width: 1225px) and (min-width: 959px) { 
+      .property_section .container-fluid {
+        width: 900px;
+      }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 959px){
+      .property_section .container-fluid {
+        width: 730px;
+      } 
+    }
+    @media (max-width: 768px) {
+      #breadcrumb .container-fluid {
+        padding: 0.3rem 15px;
+      }
+      #breadcrumb a {
+        font-size: 13px;
+      }
+      .property_section .container-fluid {
+        width: 100%;
+        padding: 20px 10px 10px;
+      } 
+      .property_section .container {
+        max-width: 100%;
+      }
+      .pname {
+        font-size: 29px;
+        margin-bottom: 15px;
+        margin-top: 5px;
+        line-height: 33px;
+      }
+      .paddress {
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      .pdesc p {
+        font-size: 13px;
+        line-height: 20px;
+        text-align: left;
+      }
+      .pcontact p {
+        font-size: 13px;
+        line-height: 20px;
+        text-align: left;
+      }
+      .property_section .slider-img-container img {
+        width: 98%;
+      }
     }

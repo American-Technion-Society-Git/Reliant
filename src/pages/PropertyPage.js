@@ -23,7 +23,7 @@ const PropertyPage = () => {
               }
             },
             {
-                breakpoint: 550,
+                breakpoint: 768,
                 settings: {
                   slidesToShow: 1,
                   slidesToScroll: 1,
@@ -67,7 +67,7 @@ console.log(data)
       </div>
       <div className='container-fluid'>
         <div className='row'>
-            <div className='col-sm-8'>
+            <div className='col-lg-8 col-md-7'>
                 <div class="pname">{data.name}</div>
                   <div class="paddress">{parse(data.address)}`</div>
                   <div class="pdesc"><p><strong>{parse(data.description)}</strong></p>
@@ -82,7 +82,7 @@ console.log(data)
 }
                 </div>
             </div>
-            <div className='col-sm-4'>
+            <div className='col-lg-4 col-md-5'>
               <div>
                 {application_form? 
                  <a href={data.application_form}><button className='btn btn-primary'>Submit Application</button></a>
