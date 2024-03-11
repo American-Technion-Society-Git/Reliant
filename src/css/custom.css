@@ -335,10 +335,21 @@
         padding: .3rem 0;
     }
     .property_section .btn.btn-primary {
-        width: 100%;
-        margin-top: 15px;
-        font-size: 1rem;
-        font-weight: 600;
+      width: 100%;
+      margin-top: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 20px 16px;
+      background: #004f73;
+    }
+    .property_section button.btn.btn-light {
+      background: #888;
+      color: #fff;
+      width: 100%;
+      margin-top: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 20px 16px;
     }
 
 
@@ -399,15 +410,6 @@
     .pdesc ul {
       list-style: none;
       padding: 0;
-    }
-    button.btn.btn-light {
-      background: #888;
-      color: #fff;
-      width: 100%;
-      margin-top: 15px;
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 16px;
     }
     
     .paddress p {
