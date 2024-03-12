@@ -51,6 +51,7 @@ const PropertyPage = () => {
     let content = data.amenities;
 content = content.replace(/<p>/g, "<li>");  
 content = content.replace(/<\/p>/g,"</li>"); 
+console.log(data)
   return (
     <div className='property_section'>
       <div className="inner_banner" style={{backgroundImage: `url(${(data.thumbnail)})`}}></div>
@@ -60,7 +61,7 @@ content = content.replace(/<\/p>/g,"</li>");
             <Link to={'/'}>Home</Link><span>&lt;</span>
             <Link to={`/communities/${data.community.toLowerCase().replace(/\s+/g, '-')}`}>{data.community}</Link>
 <span>&lt;</span>
-            <a href="javascript">Upstate New York</a>
+            <a href="javascript">{data.name}</a>
           </div>
         </div>
       </div>
