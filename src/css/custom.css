@@ -309,11 +309,11 @@
     }
 
     .inner_banner {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      height: 100vh;
-  }
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 420px;
+    }
     /* .inner_banner {
         background-size: cover;
         background-position: center center;
