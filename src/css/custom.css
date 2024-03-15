@@ -310,9 +310,10 @@
 
     .inner_banner {
         background-size: cover;
-        background-position: center center;
+        /* background-position: center center; */
+        background-position: 0 0;
         background-repeat: no-repeat;
-        height: 420px;
+        height: 500px;
     }
     .inner_banner {
         background-size: cover;
