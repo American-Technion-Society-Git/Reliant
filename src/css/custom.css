@@ -315,12 +315,12 @@
         background-repeat: no-repeat;
         height: 500px;
     }
-    .inner_banner {
+    /* .inner_banner {
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
         height: 420px;
-    }
+    } */
     #breadcrumb{font-family: "Lato", sans-serif;color: #4f5660;
         margin-top: 5px;
     }
